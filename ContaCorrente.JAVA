@@ -28,14 +28,23 @@ public class ContaCorrente {
             IO.println("4.Consultar o extrato");
             IO.println("5.Consultar saldo atual");
             String opcao = IO.readln();
-
+            int valor = 0;
+            int sacar = 0;
+            int saldo = 1000;
+            
             if (opcao.equals("1")) {
                 IO.println("Quanto deseja sacar?: ");
+
+                if (sacar > 1000 || sacar < 0) {
+                    IO.println("O valor de R$" + sacar + "foi revertido em nota");
+                }else{
+                    IO.println("Esse valor não é possivel de sacar");
+                }
+
 
             } else if (opcao.equals("2")) {
                 IO.println("Para qual conta deseja transferir?: ");
                 String transferencia = IO.readln();
-                int valor = 0;
 
                 if (transferencia.equals("Pedro")) {
                     valor = Integer.parseInt(IO.readln("Digite o valor da transferencia: "));
@@ -44,8 +53,8 @@ public class ContaCorrente {
                 }
                 if (valor > 1000 || valor <= 0) {
                     IO.println("Não a como transferir esse valor");
-                }else if (valor <= 1000 && valor > 0 ){
-                    IO.println("O valor foi transferido");
+                }else{
+                    IO.println("O valor de " + "R$" + valor + " foi transferido para " + transferencia);
                 }
 
             } else if (opcao.equals("3")) {
@@ -55,7 +64,9 @@ public class ContaCorrente {
                 IO.println(": ");
 
             }else if (opcao.equals("5")) {
-                    IO.println("Seu saldo atual é de R$1000");
+                saldo = saldo - valor;
+                saldo = saldo - sacar;
+                IO.println("Seu saldo atual é de R$" + saldo);
                 }
 
             //Usuario Pedro
@@ -71,42 +82,56 @@ public class ContaCorrente {
                 IO.println("4.Consultar o extrato");
                 IO.println("5.Consultar saldo atual");
                 String opcao = IO.readln();
-
-                if (opcao.equals("1")) {
+                 int valor = 0;
+                 int sacar = 0;
+                int saldo = 500;
+                 
+                 if (opcao.equals("1")) {
                     IO.println("Quanto deseja sacar?: ");
-               
+
+                    if (sacar > 500 || sacar < 0) {
+                        IO.println("O valor de R$" + sacar + "foi revertido em nota");
+                    }else{
+                        IO.println("Esse valor não é possivel de sacar");
+                    }
+
+
                 } else if (opcao.equals("2")) {
                     IO.println("Para qual conta deseja transferir?: ");
                     String transferencia = IO.readln();
-                    int valor = 0;
 
                     if (transferencia.equals("Pedro")) {
                         valor = Integer.parseInt(IO.readln("Digite o valor da transferencia: "));
                     }else {
                         System.exit(0);
                     }
-                    if (valor > 1000 || valor <= 0) {
+                    if (valor > 500 || valor <= 0) {
                         IO.println("Não a como transferir esse valor");
-                    }else if (valor <= 1000 && valor > 0 ){
-                        IO.println("O valor foi transferido");
+                    }else{
+                        IO.println("O valor de " + "R$" + valor + " foi transferido para " + transferencia);
+
                     }
-                    
+
                 } else if (opcao.equals("3")) {
                     IO.println("Porque deseja cancelar a conta?: ");
-               
+
                 } else if (opcao.equals("4")) {
-                    IO.println("Para qual conta deseja transferir?: ");
-                
+                    IO.println(": ");
+
                 } else if (opcao.equals("5")) {
-                    IO.println("Seu saldo atual é de R$500");
+                     saldo = saldo - valor;
+                     saldo = saldo - sacar;
+                     IO.println("Seu saldo atual é de R$" + saldo);
                 }
 
 
             }
 
 
+
+
+
+
         }
     }
-
-
 
