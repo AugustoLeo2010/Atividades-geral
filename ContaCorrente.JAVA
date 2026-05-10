@@ -27,15 +27,16 @@ public class ContaCorrente {
             IO.println("3.Cancelar a conta");
             IO.println("4.Consultar o extrato");
             IO.println("5.Consultar saldo atual");
+            IO.println("6.Encerrar programa");
             String opcao = IO.readln();
             int valor = 0;
             int sacar = 0;
             int saldo = 1000;
-            
-            if (opcao.equals("1")) {
-                IO.println("Quanto deseja sacar?: ");
 
-                if (sacar > 1000 || sacar < 0) {
+            if (opcao.equals("1")) {
+                sacar = Integer.parseInt(IO.readln("Quanto deseja sacar?: "));
+
+                if (sacar <= saldo && sacar > 0) {
                     IO.println("O valor de R$" + sacar + "foi revertido em nota");
                 }else{
                     IO.println("Esse valor não é possivel de sacar");
@@ -67,7 +68,14 @@ public class ContaCorrente {
                 saldo = saldo - valor;
                 saldo = saldo - sacar;
                 IO.println("Seu saldo atual é de R$" + saldo);
-                }
+
+            }else if (opcao.equals("6")) {
+                IO.println("Programa encerrado...");
+                System.exit(0);
+            }else{
+                IO.println("Opção não existente!!!");
+
+            }
 
             //Usuario Pedro
 
@@ -81,15 +89,16 @@ public class ContaCorrente {
                 IO.println("3.Cancelar a conta");
                 IO.println("4.Consultar o extrato");
                 IO.println("5.Consultar saldo atual");
+                IO.println("6.Encerrar programa");
                 String opcao = IO.readln();
                  int valor = 0;
                  int sacar = 0;
                 int saldo = 500;
-                 
-                 if (opcao.equals("1")) {
-                    IO.println("Quanto deseja sacar?: ");
 
-                    if (sacar > 500 || sacar < 0) {
+                 if (opcao.equals("1")) {
+                     sacar = Integer.parseInt(IO.readln("Quanto deseja sacar?: "));
+
+                    if (sacar <= saldo && sacar > 0) {
                         IO.println("O valor de R$" + sacar + "foi revertido em nota");
                     }else{
                         IO.println("Esse valor não é possivel de sacar");
@@ -100,12 +109,12 @@ public class ContaCorrente {
                     IO.println("Para qual conta deseja transferir?: ");
                     String transferencia = IO.readln();
 
-                    if (transferencia.equals("Pedro")) {
+                    if (transferencia.equals("Augusto")) {
                         valor = Integer.parseInt(IO.readln("Digite o valor da transferencia: "));
                     }else {
                         System.exit(0);
                     }
-                    if (valor > 500 || valor <= 0) {
+                    if (valor > 0 || valor <= 0) {
                         IO.println("Não a como transferir esse valor");
                     }else{
                         IO.println("O valor de " + "R$" + valor + " foi transferido para " + transferencia);
@@ -122,7 +131,11 @@ public class ContaCorrente {
                      saldo = saldo - valor;
                      saldo = saldo - sacar;
                      IO.println("Seu saldo atual é de R$" + saldo);
-                }
+
+                }else if (opcao.equals("6")) {
+                     IO.println("Programa encerrado...");
+                     System.exit(0);
+                 }
 
 
             }
