@@ -59,7 +59,10 @@ public class ContaCorrente {
                 }
 
             } else if (opcao.equals("3")) {
-                IO.println("Porque deseja cancelar a conta?: ");
+                    String contexto = IO.readln("Por que deseja cancelar a conta?: ");
+                    IO.println("entendo...");
+                    IO.println("Motivo: " + contexto);
+                    IO.println("Conta encerrada");
 
             } else if (opcao.equals("4")) {
                 IO.println(": ");
@@ -122,7 +125,10 @@ public class ContaCorrente {
                     }
 
                 } else if (opcao.equals("3")) {
-                    IO.println("Porque deseja cancelar a conta?: ");
+                    String contexto = IO.readln("Por que deseja cancelar a conta?: ");
+                    IO.println("entendo...");
+                    IO.println("Motivo: " + contexto);
+                    IO.println("Conta encerrada");
 
                 } else if (opcao.equals("4")) {
                     IO.println(": ");
