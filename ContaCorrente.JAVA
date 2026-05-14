@@ -18,8 +18,8 @@ public class ContaCorrente {
         //Usuario Augusto
 
         if (nome.equals("Augusto") && senha == 190410) {
-            IO.println("Bem vindo usuario " + nome);
-            IO.println("Nascimento: " + nascimento);
+            IO.println("Bem vindo usuario Augusto");
+            IO.println("Nascimento: 19/04/10");
             IO.println("Agencia: ########");
             IO.println("Oque voçê deseja fazer?: ");
             IO.println("1.Saldo");
