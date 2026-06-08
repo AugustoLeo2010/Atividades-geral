@@ -1,1 +1,90 @@
+public class leo {
+    public static void main(String[] args) {
 
+        String opcao;
+
+
+        String[] nomes = new String[10];
+        int[] idades = new int[10];
+        String[] cursos = new String[10];
+        String[] lista = new String[10];
+
+        int quantidade = 0;
+
+        while (true) {
+
+            IO.println("=====Cadastro de Alunos=====");
+            IO.println("1 - Cadastrar Aluno");
+            IO.println("2 - Alterar Aluno");
+            IO.println("3 - Excluir Aluno");
+            IO.println("4 - Lista de cadastros");
+            IO.println("5 - Sair");
+
+            opcao = IO.readln("Digite a opção desejada: ");
+
+
+            if (opcao.equals("1")) {
+                
+                  if (quantidade < 10) {
+
+
+                        for (int i = 0; i < nomes.length; i++) {
+                            nomes[i] = IO.readln("Digite o nome do aluno " + (i + 1) + ":");
+                        }
+
+                        for (int i = 0; i < idades.length; i++) {
+                            idades[i] = Integer.parseInt(IO.readln("Digite a idade do aluno " + (i + 1) + ":"));
+                        }
+
+                        for (int i = 0; i < cursos.length; i++) {
+                            cursos[i] = IO.readln("Digite o curso do aluno " + (i + 1) + ":");
+
+                            IO.println("Aluno: " + nomes[quantidade] + " ||" + " idade: " + idades[quantidade] + " ||" + " curso: " +
+                                    cursos[quantidade] + "\nfoi cadastrado\n");
+
+
+                            quantidade++;
+                        }
+                        if (nomes.equals("fim") || idades.equals("fim") || cursos.equals("fim")) {
+                            break;
+                        }
+                    } else {
+                        IO.println("Limite de alunos ja atingido");
+                    }
+
+
+                    if (opcao.equals("2")) {
+                        String alterar;
+
+                        for (int i = 0; i < nomes.length; i++) {
+                            nomes[i] = IO.readln("Digite o nome do aluno que deseja alterar: ");
+                            alterar = IO.readln("Digite a alteração: ");
+                            IO.println("cadastro " + nomes[quantidade] + " alterado para " + alterar);
+
+                        }
+                    }
+
+                    if (opcao.equals("3")) {
+                        String excluir;
+
+                        for (int i = 0; i < nomes.length; i++) {
+                            excluir = IO.readln("Digite o cadastro que deseja excluir: ");
+                            IO.println("Voce excluiu o cadastro " + excluir);
+                        }
+                    }
+
+                    if (opcao.equals("4")) {
+                        for (int i = 0; i < lista.length; i++) {
+
+                            lista[i] = IO.readln("=====Lista de Cadastros=====");
+                            IO.println("Aluno: " + nomes[quantidade] + "\nIdade: " + idades[quantidade] + "\nCurso: " + cursos[quantidade]);
+
+
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
