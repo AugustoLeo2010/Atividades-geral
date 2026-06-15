@@ -3,9 +3,9 @@ public class teste {
 
         float[][] matriz = new float[3][3];
 
-        matriz[0][0] = 10;
-        matriz[0][1] = 20;
-        matriz[0][2] = 30;
+        matriz[0][0] = 10;  \\      {10,20,30},
+        matriz[0][1] = 20;   \\ ou  {40,50,60},
+        matriz[0][2] = 30;   \\     {70,80,90}
 
 
         matriz[1][0] = 40;
