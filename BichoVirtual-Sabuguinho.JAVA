@@ -1,4 +1,4 @@
-public class BichinhoVirtual {
+ public class BichinhoVirtual {
  private String nome;
  private int fome;
  private int estamina;
