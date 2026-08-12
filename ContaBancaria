@@ -1,0 +1,97 @@
+public class ContaBancaria {
+
+private String titular;
+private double saldo;
+private double limite;
+
+
+public ContaBancaria(String saldo) {
+
+this.titular = titular;
+this.saldo = 0;
+this.limite = limite;
+
+}
+
+//Metodos
+public void saldo() {
+
+     saldo = SaldoSacar + SaldoDepositar;
+
+}
+
+public void sacar() {
+
+    if ( SaldoDepositar <= 0 ) {
+    IO.println("Você não tem saldo o suficiente para sacar");
+
+    } else if ( SaldoDepositar > 0) {
+    IO.println("Quanto deseja sacar:");
+}
+}
+
+public void depositar() {
+
+    if ( SaldoSacar <= 0 ) {
+     IO.println("Você não tem saldo o suficiente para depositar");
+
+    } else if ( SaldoSacar > 0 ) {
+     IO.println("Quanto deseja depositar");
+    }
+
+}
+
+public void sair(){
+    System.exit(0);
+}
+
+//Atributos
+    public static void main(String []args) {
+
+        String menu = IO.readln("Deseja abrir o aplicativo do banco(s/n):");
+        if (menu.equals("s")) {
+            IO.println("Sistema iniciado");
+        }else if (menu.equals("n")) {
+            IO.println("Sistema desligando");
+            System.exit(0);
+        }
+
+
+        ContaBancaria conta = new ContaBancaria(menu);
+        String escolha = "";
+        while (escolha.equals("4")) {
+            continue;
+        }
+
+        IO.println("|==========================|");
+        IO.println("|===== Conta Bancaria =====|");
+        IO.println("|==                      ==|");
+        IO.println("|==    Conferir Saldo    ==|");
+        IO.println("|==        Sacar         ==|");
+        IO.println("|==      Depositar       ==|");
+        IO.println("|==         Sair         ==|");
+        IO.println("|=====    1-2-3-4     =====|");
+        IO.println("|==========================|");
+        escolha = IO.readln("Digite um numero entre 1 e 4:");
+
+        if (escolha.equals("1")) {
+            conta.saldo();
+
+        }else if (escolha.equals("2")) {
+            conta.sacar();
+
+        }else if (escolha.equals("3")) {
+            conta.depositar();
+
+        }else if (escolha.equals("4")) {
+            conta.sair();
+
+        }
+
+
+
+    }
+
+
+
+}
