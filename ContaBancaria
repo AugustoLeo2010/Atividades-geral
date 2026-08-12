@@ -1,95 +1,105 @@
 public class ContaBancaria {
 
-private String titular;
-private double saldo;
-private double limite;
+    private String titular;
+    private double saldo;
+    private double limite;
 
 
-public ContaBancaria(String saldo) {
+    public ContaBancaria(String titular, double limite) {
 
-this.titular = titular;
-this.saldo = 0;
-this.limite = limite;
+        this.titular = titular;
+        this.saldo = 0;
+        this.limite = limite;
 
-}
-
-//Metodos
-public void saldo() {
-
-     saldo = SaldoSacar + SaldoDepositar;
-
-}
-
-public void sacar() {
-
-    if ( SaldoDepositar <= 0 ) {
-    IO.println("Você não tem saldo o suficiente para sacar");
-
-    } else if ( SaldoDepositar > 0) {
-    IO.println("Quanto deseja sacar:");
-}
-}
-
-public void depositar() {
-
-    if ( SaldoSacar <= 0 ) {
-     IO.println("Você não tem saldo o suficiente para depositar");
-
-    } else if ( SaldoSacar > 0 ) {
-     IO.println("Quanto deseja depositar");
     }
 
-}
+    //Metodos
+    public double getSaldo() {
+        return saldo;
+    }
 
-public void sair(){
-    System.exit(0);
-}
+    public void sacar(double valor) {
 
-//Atributos
-    public static void main(String []args) {
+        if (valor <= 0) {
+            IO.println("Não ha como sacar $0");
+
+        } else if (valor <= saldo + limite) {
+            saldo = valor;
+            IO.println("Saque realizado");
+
+        } else {
+            IO.println("Saldo insuficiente");
+        }
+
+    }
+
+    public void depositar(double valor) {
+
+        if (valor > 0) {
+            saldo += valor;
+            IO.println("Deposito realizado");
+
+        } else {
+            IO.println("O valor para depositar tem que ser maior que 0");
+        }
+
+    }
+
+    public void sair() {
+        System.exit(0);
+    }
+
+    //Atributos
+    public static void main(String[] args) {
 
         String menu = IO.readln("Deseja abrir o aplicativo do banco(s/n):");
         if (menu.equals("s")) {
             IO.println("Sistema iniciado");
-        }else if (menu.equals("n")) {
+       
+        } else if (menu.equals("n")) {
             IO.println("Sistema desligando");
             System.exit(0);
         }
 
 
-        ContaBancaria conta = new ContaBancaria(menu);
+        ContaBancaria conta = new ContaBancaria("cliente", 500);
         String escolha = "";
-        while (escolha.equals("4")) {
-            continue;
+        while (!escolha.equals("4")) {
+
+
+            IO.println("|==========================|");
+            IO.println("|===== Conta Bancaria =====|");
+            IO.println("|==                      ==|");
+            IO.println("|==   1.Conferir Saldo   ==|");
+            IO.println("|==       2.Sacar        ==|");
+            IO.println("|==      3.Depositar     ==|");
+            IO.println("|==        4.Sair        ==|");
+            IO.println("|==                      ==|");
+            IO.println("|===== Conta Bancaria =====|");
+            IO.println("|==========================|");
+            escolha = IO.readln("Digite um numero entre 1 e 4: ");
+
+            if (escolha.equals("1")) {
+                IO.println("Saldo: R$" + conta.getSaldo());
+
+            } else if (escolha.equals("2")) {
+                double valor = Double.parseDouble(IO.readln("Quanto deseja sacar: "));
+                conta.sacar(valor);
+
+            } else if (escolha.equals("3")) {
+                double valor = Double.parseDouble(IO.readln("Quanto deseja depositar: "));
+                conta.depositar(valor);
+
+            } else if (escolha.equals("4")) {
+                conta.sair();
+
+            }
+
+        
         }
-
-        IO.println("|==========================|");
-        IO.println("|===== Conta Bancaria =====|");
-        IO.println("|==                      ==|");
-        IO.println("|==    Conferir Saldo    ==|");
-        IO.println("|==        Sacar         ==|");
-        IO.println("|==      Depositar       ==|");
-        IO.println("|==         Sair         ==|");
-        IO.println("|=====    1-2-3-4     =====|");
-        IO.println("|==========================|");
-        escolha = IO.readln("Digite um numero entre 1 e 4:");
-
-        if (escolha.equals("1")) {
-            conta.saldo();
-
-        }else if (escolha.equals("2")) {
-            conta.sacar();
-
-        }else if (escolha.equals("3")) {
-            conta.depositar();
-
-        }else if (escolha.equals("4")) {
-            conta.sair();
-
-        }
-
-
-
+        
+    }
+}
     }
 
 
