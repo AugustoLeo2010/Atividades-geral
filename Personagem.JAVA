@@ -4,7 +4,7 @@ private String nome;
 private int vida;
 private  int energia;
 private int nivel;
-private int atacar;
+private int danoAtacar;
 
 
 public Personagem(String nome) {
@@ -13,7 +13,7 @@ this.nome = nome;
 this.vida = 100;
 this.energia = 100;
 this.nivel = 1;
-this.atacar = 40;
+this.danoAtacar = 40;
 
 }
 
@@ -56,6 +56,7 @@ public void receberDano(int dano) {
 
 public void descansar() {
    energia += 40;
+   vida += 20;
 
     if (energia > 100) {
        energia = 100;
@@ -71,10 +72,10 @@ public void descansar() {
 
 
 public void atacar() {
-    if (energia >= 20) {
+    if (energia >= 20 && vida > 0) {
       energia -= 20;
       IO.println(nome + " atacou |energia - 20|");
-      IO.println("Monstro recebeu " + atacar + " de dano");
+      IO.println("Monstro recebeu " + danoAtacar + " de dano");
 
     }else if (energia <= 0){
       IO.println(nome + " não tem energia o suficiente para atacar...");
@@ -146,7 +147,7 @@ public void derrotarMonstro() {
                 if (escolha.equals("atacar")) {
                     personagem.atacar();
                     IO.println("monstro ataca");
-                    personagem.receberDano(50);
+                    personagem.receberDano(25);
                     IO.println(" Atacar - Fugir ");
                     escolha = IO.readln("Escolha: ");
 
@@ -176,4 +177,3 @@ public void derrotarMonstro() {
     }
 
 }
-
