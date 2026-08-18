@@ -1,1 +1,44 @@
+public class Cofrinho {
 
+private String nome;
+private double saldo;
+private double meta;
+private double valor;
+
+public Cofrinho(String nome){
+
+    this.nome = nome;
+    this.saldo = 0;
+    this.meta = meta;
+    this.valor = valor;
+
+}
+
+public void AdicionarDinheiro(double valor) {
+
+    
+
+
+
+}
+
+public static void main(String []args) {
+
+    String escolha;
+
+    IO.println("|=====-----COFRINHO-----=====|");
+    IO.println("|==                        ==|");
+    IO.println("|==  1.Adicionar dinheiro  ==|");
+    IO.println("|==   2.Retirar Dinheiro   ==|");
+    IO.println("|==        3.Saldo         ==|");
+    IO.println("|==                        ==|");
+    IO.println("|============================|");
+    escolha = IO.readln("Digite a opção desejada: ");
+
+
+
+}
+
+
+
+}
