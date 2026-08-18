@@ -101,14 +101,12 @@
 // PARTE MAIN 
 
 public static void main(String[] args) {
-  // 1. Pergunta o nome antes de criar o objeto
+
   String nomeDoBicho = IO.readln("De um nome ao bicho: ");
   IO.println("Seu bicho foi nomeado como " + nomeDoBicho);
 
-  // 2. Cria o bicho passando o nome para o construtor
   BichinhoVirtual bicho = new BichinhoVirtual(nomeDoBicho);
 
-  // 3. Desenha a arte ASCII do bicho
   IO.println("");
   IO.println(" __      __");
   IO.println("|  |____|  |");
@@ -119,7 +117,6 @@ public static void main(String[] args) {
   IO.println("   |_| |_|  ");
 
   String escolha = "";
-  // 4. Loop que mantém o jogo rodando até o usuário digitar "4"
   while (!escolha.equals("4")) {
     bicho.mostrarStatus();
 
@@ -128,7 +125,6 @@ public static void main(String[] args) {
 
     escolha = IO.readln("Resposta: ");
 
-    // 5. Os testes que ligam a digitação do usuário aos métodos
     if (escolha.equals("1")) {
       bicho.alimentar();
     } else if (escolha.equals("2")) {
