@@ -16,14 +16,52 @@ public Cofrinho(String nome){
 
 public void AdicionarDinheiro(double valor) {
 
-    
+
 
 
 
 }
 
-public static void main(String []args) {
+public void RetirarDinheiro(double valor) {
 
+
+
+
+
+}
+
+public double getSaldo() {
+
+
+
+
+
+
+}
+
+public double getProgresso() {
+
+
+
+
+
+
+}
+
+public double getStatus() {
+    
+    
+    
+    
+    
+    
+    }
+
+public static void main(String []args) {
+    
+    String nome = IO.readln("Digite o nome do usuario: "); 
+   Cofrinho cofrinho = new Cofrinho(nome);
+   
     String escolha;
 
     IO.println("|=====-----COFRINHO-----=====|");
@@ -42,3 +80,4 @@ public static void main(String []args) {
 
 
 }
+
