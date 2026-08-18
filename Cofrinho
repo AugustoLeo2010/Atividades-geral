@@ -2,7 +2,7 @@ public class Cofrinho {
 
 private String nome;
 private double saldo;
-private double meta;
+private int meta;
 private double valor;
 
 public Cofrinho(String nome){
